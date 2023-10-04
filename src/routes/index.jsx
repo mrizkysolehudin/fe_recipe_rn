@@ -22,7 +22,16 @@ const Routes = () => {
             headerShown: false,
           }}
         />
-        <Stack.Screen name="Register" component={RegisterScreen} />
+        <Stack.Screen
+          name="Register"
+          component={RegisterScreen}
+          options={{
+            headerTitle: '',
+            headerStyle: {
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+            },
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

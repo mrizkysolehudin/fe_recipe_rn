@@ -16,7 +16,12 @@ const LoginScreen = ({navigation}) => {
           flexDirection={'row'}
           justifyContent={'center'}
           alignItems={'center'}>
-          <Image source={icon_user} width={' 68.33%'} height={' 68.33%'} />
+          <Image
+            source={icon_user}
+            alt="icon_user"
+            width={' 68.33%'}
+            height={' 68.33%'}
+          />
         </View>
       </View>
 
@@ -106,11 +111,5 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '100%',
     backgroundColor: 'white',
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: colors.yellow,
-    borderRadius: 10,
-    paddingHorizontal: 20,
   },
 });
