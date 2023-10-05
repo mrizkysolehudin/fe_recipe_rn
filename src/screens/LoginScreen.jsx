@@ -2,7 +2,7 @@ import React from 'react';
 import {Button, Image, Input, Text, View} from 'native-base';
 import {StyleSheet, TouchableHighlight} from 'react-native';
 import {colors} from '../assets/style/colors';
-import icon_user from '../utils/icons/icon_user.png';
+import icon_user from '../assets/icons/icon_user.png';
 
 const LoginScreen = ({navigation}) => {
   return (
