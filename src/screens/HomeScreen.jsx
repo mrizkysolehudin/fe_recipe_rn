@@ -2,12 +2,12 @@ import {SafeAreaView, SectionList, StyleSheet} from 'react-native';
 import React from 'react';
 import {dataRecipes} from '../dummy/recipes';
 import BottomTabs from '../components/Global/BottomTabs';
-import {View} from 'native-base';
 import PopularForYouSection from '../components/Home/PopularForYouSection';
 import NewRecipeSection from '../components/Home/NewRecipeSection';
 import PopularRecipes from '../components/Home/PopularRecipes';
 import SearchInput from '../components/Home/SearchInput';
-import {ScrollView} from 'react-native-gesture-handler';
+// import axios from 'axios';
+// import {REACT_APP_BACKEND_URL} from '../../env';
 
 const HomeScreen = ({route}) => {
   const openTab = route.name || 'Home';
@@ -19,6 +19,12 @@ const HomeScreen = ({route}) => {
     {title: 'NewRecipeSection', data: [3]},
     {title: 'PopularRecipes', data: [4]},
   ];
+
+  // React.useEffect(() => {
+  //   axios.get(`${REACT_APP_BACKEND_URL}/recipe`).then(response => {
+  //     console.log(response);
+  //   });
+  // }, []);
 
   return (
     <SafeAreaView style={styles.container}>
