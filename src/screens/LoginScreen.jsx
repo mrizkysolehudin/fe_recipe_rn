@@ -1,11 +1,38 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Button, Image, Input, Text, View} from 'native-base';
 import {StyleSheet, TouchableHighlight} from 'react-native';
 import {colors} from '../assets/style/colors';
 import icon_user from '../assets/icons/icon_user.png';
 import FeatherIcon from 'react-native-vector-icons/Feather';
+import axios from 'axios';
+import {REACT_APP_BACKEND_URL} from '../../env';
 
 const LoginScreen = ({navigation}) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = async () => {
+    if (email === '' || password === '') {
+      console.log('Input is empty');
+      return;
+    }
+
+    const data = {
+      email,
+      password,
+    };
+
+    axios
+      .post(`${REACT_APP_BACKEND_URL}/users/login`, data)
+      .then(response => {
+        console.log(response);
+        navigation.navigate('Home');
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
   return (
     <View style={styles.container}>
       <View justifyContent={'center'} flexDirection={'row'}>
@@ -46,6 +73,8 @@ const LoginScreen = ({navigation}) => {
             bgColor={'#F5F5F5'}
             placeholderTextColor={colors.primary}
             autoComplete="email"
+            value={email}
+            onChangeText={setEmail}
             leftElement={
               <FeatherIcon
                 name="user"
@@ -66,6 +95,8 @@ const LoginScreen = ({navigation}) => {
             placeholderTextColor={colors.primary}
             autoComplete="off"
             secureTextEntry={true}
+            value={password}
+            onChangeText={setPassword}
             InputLeftElement={
               <FeatherIcon
                 name="lock"
@@ -86,6 +117,7 @@ const LoginScreen = ({navigation}) => {
           Forgot Password?
         </Text>
         <Button
+          onPress={() => handleLogin()}
           style={{
             backgroundColor: colors.yellow,
             padding: 10,
