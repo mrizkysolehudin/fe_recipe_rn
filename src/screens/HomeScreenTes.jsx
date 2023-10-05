@@ -9,7 +9,7 @@ import PopularRecipes from '../components/Home/PopularRecipes';
 import SearchInput from '../components/Home/SearchInput';
 import {ScrollView} from 'react-native-gesture-handler';
 
-const HomeScreenCopy = ({route}) => {
+const HomeScreenTes = ({route}) => {
   const openTab = route.name || 'Home';
 
   const data = dataRecipes.data;
@@ -31,7 +31,7 @@ const HomeScreenCopy = ({route}) => {
   );
 };
 
-export default HomeScreenCopy;
+export default HomeScreenTes;
 
 const styles = StyleSheet.create({
   container: {

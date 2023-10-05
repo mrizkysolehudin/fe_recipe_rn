@@ -1,5 +1,12 @@
 import React, {useEffect} from 'react';
-import {Image, StyleSheet, Text, TouchableHighlight, View} from 'react-native';
+import {
+  Image,
+  StyleSheet,
+  Text,
+  TouchableHighlight,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import FeatherIcon from 'react-native-vector-icons/Feather';
@@ -8,7 +15,7 @@ import BottomTabs from '../components/Global/BottomTabs';
 import {dataUser} from '../dummy/User';
 import {colors} from '../assets/style/colors';
 
-const ProfileScreen = ({route}) => {
+const ProfileScreen = ({route, navigation}) => {
   const openTab = route.name || 'Profile';
 
   const item = dataUser;
@@ -51,13 +58,14 @@ const ProfileScreen = ({route}) => {
           borderTopStartRadius: 20,
           borderTopRightRadius: 20,
         }}>
-        <View
+        <TouchableOpacity
+          onPress={() => navigation.navigate('EditProfile')}
           style={{
             display: 'flex',
             flexDirection: 'row',
             alignItems: 'center',
             marginLeft: 20,
-            marginTop: 20,
+            paddingTop: 20,
             width: '100%',
             position: 'relative',
           }}>
@@ -67,11 +75,12 @@ const ProfileScreen = ({route}) => {
             style={{
               position: 'absolute',
               right: 35,
+              top: 20,
             }}
             name="navigate-next"
             size={25}
           />
-        </View>
+        </TouchableOpacity>
         <View style={styles.cardMenuItem}>
           <MaterialIcon name="list" size={24} color={colors.yellow} />
           <Text style={styles.titleMenuItem}>My Recipes</Text>

@@ -7,6 +7,7 @@ import SplashScreen from 'react-native-splash-screen';
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import RecipeDetailsScreen from '../screens/RecipeDetailsScreen';
+import EditProfileScreen from '../screens/EditProfileScreen';
 
 const Stack = createStackNavigator();
 
@@ -18,6 +19,13 @@ const Routes = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name="EditProfile"
+          component={EditProfileScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
         <Stack.Screen
           name="RecipeDetails"
           component={RecipeDetailsScreen}
