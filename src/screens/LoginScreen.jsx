@@ -1,8 +1,9 @@
 import React from 'react';
-import {Button, Image, Input, Text, View} from 'native-base';
+import {Button, Icon, Image, Input, Text, View} from 'native-base';
 import {StyleSheet, TouchableHighlight} from 'react-native';
 import {colors} from '../assets/style/colors';
 import icon_user from '../assets/icons/icon_user.png';
+import FeatherIcon from 'react-native-vector-icons/Feather';
 
 const LoginScreen = ({navigation}) => {
   return (
@@ -37,28 +38,42 @@ const LoginScreen = ({navigation}) => {
 
         <View px={30} mt={45}>
           <Input
-            pl={5}
             rounded={10}
-            py={3}
-            fontSize={15}
+            fontSize={12}
+            h={60}
             placeholder="Email address"
             borderColor={'transparent'}
             bgColor={'#F5F5F5'}
             placeholderTextColor={colors.primary}
             autoComplete="email"
+            leftElement={
+              <FeatherIcon
+                name="user"
+                size={24}
+                color={colors.primary}
+                style={{marginLeft: 20}}
+              />
+            }
           />
           <Input
-            pl={5}
             rounded={10}
             mt={5}
-            py={3}
-            fontSize={15}
+            h={60}
+            fontSize={12}
             borderColor={'transparent'}
             bgColor={'#F5F5F5'}
             placeholder="Password"
             placeholderTextColor={colors.primary}
             autoComplete="off"
             secureTextEntry={true}
+            InputLeftElement={
+              <FeatherIcon
+                name="lock"
+                size={24}
+                color={colors.primary}
+                style={{marginLeft: 20}}
+              />
+            }
           />
         </View>
 
