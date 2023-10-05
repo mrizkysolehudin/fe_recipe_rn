@@ -95,7 +95,9 @@ const ProfileScreen = ({route, navigation}) => {
             size={25}
           />
         </TouchableOpacity>
-        <View style={styles.cardMenuItem}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('SavedRecipe')}
+          style={styles.cardMenuItem}>
           <IonIcon name="bookmark-outline" size={24} color={colors.yellow} />
           <Text style={styles.titleMenuItem}>Saved Recipes</Text>
           <MaterialIcon
@@ -106,8 +108,10 @@ const ProfileScreen = ({route, navigation}) => {
             name="navigate-next"
             size={25}
           />
-        </View>
-        <View style={styles.cardMenuItem}>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('LikedRecipe')}
+          style={styles.cardMenuItem}>
           <AntDesignIcon name="like2" size={24} color={colors.yellow} />
           <Text style={styles.titleMenuItem}>Liked Recipes</Text>
           <MaterialIcon
@@ -118,7 +122,7 @@ const ProfileScreen = ({route, navigation}) => {
             name="navigate-next"
             size={25}
           />
-        </View>
+        </TouchableOpacity>
       </View>
 
       <BottomTabs openTab={openTab} />

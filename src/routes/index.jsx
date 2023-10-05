@@ -9,6 +9,8 @@ import ProfileScreen from '../screens/ProfileScreen';
 import RecipeDetailsScreen from '../screens/RecipeDetailsScreen';
 import EditProfileScreen from '../screens/EditProfileScreen';
 import MyRecipesScreen from '../screens/MyRecipesScreen';
+import SavedRecipeScreen from '../screens/SavedRecipeScreen';
+import LikedRecipeScreen from '../screens/LikedRecipe';
 
 const Stack = createStackNavigator();
 
@@ -30,6 +32,20 @@ const Routes = () => {
         <Stack.Screen
           name="MyRecipes"
           component={MyRecipesScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="SavedRecipe"
+          component={SavedRecipeScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="LikedRecipe"
+          component={LikedRecipeScreen}
           options={{
             headerShown: false,
           }}
