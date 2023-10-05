@@ -22,15 +22,17 @@ const LoginScreen = ({navigation}) => {
       password,
     };
 
-    axios
-      .post(`${REACT_APP_BACKEND_URL}/users/login`, data)
-      .then(response => {
-        console.log(response);
-        navigation.navigate('Home');
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    navigation.navigate('Home');
+
+    // axios
+    //   .post(`${REACT_APP_BACKEND_URL}/users/login`, data)
+    //   .then(response => {
+    //     console.log(response);
+    //     navigation.navigate('Home');
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //   });
   };
 
   return (

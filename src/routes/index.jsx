@@ -19,6 +19,13 @@ const Routes = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
+          name="RecipeDetails"
+          component={RecipeDetailsScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
           name="Login"
           component={LoginScreen}
           options={{
@@ -39,13 +46,7 @@ const Routes = () => {
             headerShown: false,
           }}
         />
-        <Stack.Screen
-          name="RecipeDetails"
-          component={RecipeDetailsScreen}
-          options={{
-            headerShown: false,
-          }}
-        />
+
         {/* <Stack.Screen
           name="Login"
           component={LoginScreen}
