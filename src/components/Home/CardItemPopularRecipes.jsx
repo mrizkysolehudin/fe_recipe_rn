@@ -3,9 +3,9 @@ import React from 'react';
 import {TouchableWithoutFeedback} from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 
-const CardItemPopularRecipes = ({item}) => {
+const CardItemPopularRecipes = ({item, handlePress}) => {
   return (
-    <TouchableWithoutFeedback>
+    <TouchableWithoutFeedback onPress={() => handlePress(item?.recipe_id)}>
       <View
         style={{
           flexDirection: 'row',

@@ -1,5 +1,5 @@
 import {SafeAreaView, SectionList, StyleSheet} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import {dataRecipes} from '../dummy/recipes';
 import BottomTabs from '../components/Global/BottomTabs';
 import PopularForYouSection from '../components/Home/PopularForYouSection';
@@ -8,9 +8,11 @@ import PopularRecipes from '../components/Home/PopularRecipes';
 import SearchInput from '../components/Home/SearchInput';
 // import axios from 'axios';
 // import {REACT_APP_BACKEND_URL} from '../../env';
+// import {View, Text} from 'react-native';
 
-const HomeScreen = ({route}) => {
+const HomeScreen = ({route, navigation}) => {
   const openTab = route.name || 'Home';
+  // const [dataCoba, setDataCoba] = useState([]);
 
   const data = dataRecipes.data;
   const sections = [
@@ -20,14 +22,26 @@ const HomeScreen = ({route}) => {
     {title: 'PopularRecipes', data: [4]},
   ];
 
+  const handlePress = id => {
+    navigation.navigate('RecipeDetail', {id});
+  };
+
   // React.useEffect(() => {
   //   axios.get(`${REACT_APP_BACKEND_URL}/recipe`).then(response => {
-  //     console.log(response);
+  //     setDataCoba(response.data);
   //   });
   // }, []);
 
+  // console.log(dataCoba?.data && dataCoba?.data[0]?.title);
+
   return (
     <SafeAreaView style={styles.container}>
+      {/* <View style={{backgroundColor: 'blue', height: 80}}>
+        <Text style={{color: 'white', fontSize: 30}}>
+          {dataCoba?.data && dataCoba?.data[0]?.title}
+        </Text>
+      </View> */}
+
       <SectionList
         sections={sections}
         keyExtractor={(item, index) => index.toString()}
@@ -38,9 +52,9 @@ const HomeScreen = ({route}) => {
             case 'PopularForYouSection':
               return <PopularForYouSection />;
             case 'NewRecipeSection':
-              return <NewRecipeSection data={data} />;
+              return <NewRecipeSection data={data} handlePress={handlePress} />;
             case 'PopularRecipes':
-              return <PopularRecipes data={data} />;
+              return <PopularRecipes data={data} handlePress={handlePress} />;
             default:
               return null;
           }

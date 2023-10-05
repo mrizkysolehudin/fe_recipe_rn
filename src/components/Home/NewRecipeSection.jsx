@@ -1,7 +1,7 @@
 import {Image, ScrollView, Text, View} from 'native-base';
 import {TouchableWithoutFeedback} from 'react-native';
 
-const NewRecipeSection = ({data}) => {
+const NewRecipeSection = ({data, handlePress}) => {
   return (
     <View style={{marginTop: 30, marginLeft: 28}}>
       <Text
@@ -22,7 +22,9 @@ const NewRecipeSection = ({data}) => {
         }}>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {data.reverse().map((item, index) => (
-            <TouchableWithoutFeedback key={index}>
+            <TouchableWithoutFeedback
+              key={index}
+              onPress={() => handlePress(item.recipe_id)}>
               <View style={{paddingRight: 20}}>
                 <Image
                   source={{uri: item.image}}

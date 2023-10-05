@@ -3,7 +3,7 @@ import React from 'react';
 import {TouchableOpacity} from 'react-native';
 import CardItemPopularRecipes from './CardItemPopularRecipes';
 
-const PopularRecipes = ({data}) => {
+const PopularRecipes = ({data, handlePress}) => {
   return (
     <View style={{marginLeft: 28}}>
       <View
@@ -28,7 +28,9 @@ const PopularRecipes = ({data}) => {
 
       <FlatList
         data={data}
-        renderItem={({item}) => <CardItemPopularRecipes item={item} />}
+        renderItem={({item}) => (
+          <CardItemPopularRecipes item={item} handlePress={handlePress} />
+        )}
         keyExtractor={(item, index) => index.toString()}
       />
     </View>

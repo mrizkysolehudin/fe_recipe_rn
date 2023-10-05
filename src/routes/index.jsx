@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import LoginScreen from '../screens/LoginScreen';
@@ -6,6 +6,7 @@ import RegisterScreen from '../screens/RegisterScreen';
 import SplashScreen from 'react-native-splash-screen';
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import RecipeDetailsScreen from '../screens/RecipeDetailsScreen';
 
 const Stack = createStackNavigator();
 
@@ -17,13 +18,13 @@ const Routes = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
+        {/* <Stack.Screen
           name="Login"
           component={LoginScreen}
           options={{
             headerShown: false,
           }}
-        />
+        /> */}
         <Stack.Screen
           name="Home"
           component={HomeScreen}
@@ -38,13 +39,20 @@ const Routes = () => {
             headerShown: false,
           }}
         />
-        {/* <Stack.Screen
+        <Stack.Screen
+          name="RecipeDetail"
+          component={RecipeDetailsScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
           name="Login"
           component={LoginScreen}
           options={{
             headerShown: false,
           }}
-        /> */}
+        />
         <Stack.Screen
           name="Register"
           component={RegisterScreen}
