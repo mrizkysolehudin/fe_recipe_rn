@@ -340,6 +340,7 @@ const styles = StyleSheet.create({
     padding: 12,
     flexDirection: 'row',
     marginBottom: 20,
+    borderRadius: 15,
   },
   iconPlay: {
     backgroundColor: '#EEC302',
