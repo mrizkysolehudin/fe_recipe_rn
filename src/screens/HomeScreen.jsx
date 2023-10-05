@@ -23,7 +23,7 @@ const HomeScreen = ({route, navigation}) => {
   ];
 
   const handlePress = id => {
-    navigation.navigate('RecipeDetail', {id});
+    navigation.navigate('RecipeDetails', {id});
   };
 
   // React.useEffect(() => {
