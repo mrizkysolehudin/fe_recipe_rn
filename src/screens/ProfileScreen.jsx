@@ -81,7 +81,9 @@ const ProfileScreen = ({route, navigation}) => {
             size={25}
           />
         </TouchableOpacity>
-        <View style={styles.cardMenuItem}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('MyRecipes')}
+          style={styles.cardMenuItem}>
           <MaterialIcon name="list" size={24} color={colors.yellow} />
           <Text style={styles.titleMenuItem}>My Recipes</Text>
           <MaterialIcon
@@ -92,7 +94,7 @@ const ProfileScreen = ({route, navigation}) => {
             name="navigate-next"
             size={25}
           />
-        </View>
+        </TouchableOpacity>
         <View style={styles.cardMenuItem}>
           <IonIcon name="bookmark-outline" size={24} color={colors.yellow} />
           <Text style={styles.titleMenuItem}>Saved Recipes</Text>

@@ -6,6 +6,7 @@ export const dataRecipes = {
       recipe_id: 4,
       title: 'Banana Smothie Pop',
       description: null,
+      category_name: 'sweet',
       creator: 'messi',
       image:
         'https://res.cloudinary.com/dskltx6xi/image/upload/v1693480448/mama_recipe/recipe/tfm0vyffy2gpxmgtyeaj.png',
@@ -18,6 +19,7 @@ export const dataRecipes = {
       recipe_id: 9,
       title: 'Bananas Pancake',
       description: null,
+      category_name: 'sweet',
       creator: 'messi',
       image:
         'https://res.cloudinary.com/dskltx6xi/image/upload/v1694351197/mama_recipe/recipe/Rectangle_328_m6svew.png',
@@ -30,6 +32,7 @@ export const dataRecipes = {
       recipe_id: 3,
       title: 'Bomb Chiken',
       description: null,
+      category_name: 'savory',
       creator: 'messi',
       image:
         'https://res.cloudinary.com/dskltx6xi/image/upload/v1693480405/mama_recipe/recipe/ur6j4b71fsud6anmaaay.png',
@@ -42,6 +45,7 @@ export const dataRecipes = {
       recipe_id: 5,
       title: 'Coffe Lava Cake',
       description: null,
+      category_name: 'sweet',
       creator: 'messi',
       image:
         'https://res.cloudinary.com/dskltx6xi/image/upload/v1694351040/mama_recipe/recipe/coffe-lava-cake_fhh2pr.png',
@@ -52,8 +56,9 @@ export const dataRecipes = {
     },
     {
       recipe_id: 22,
-      title: 'Fried rice',
+      title: 'Fried Rice',
       description: '',
+      category_name: 'savory',
       creator: 'messi',
       image:
         'https://res.cloudinary.com/dskltx6xi/image/upload/v1695341998/mama_recipe/recipe/vhn753ajepzouuuclaeh.jpg',
@@ -65,6 +70,7 @@ export const dataRecipes = {
       recipe_id: 7,
       title: 'Indian Salad',
       description: null,
+      category_name: 'healthy',
       creator: 'messi',
       image:
         'https://res.cloudinary.com/dskltx6xi/image/upload/v1694351071/mama_recipe/recipe/indian-salad_mnotsr.png',
@@ -75,8 +81,9 @@ export const dataRecipes = {
     },
     {
       recipe_id: 21,
-      title: 'pizza',
+      title: 'Pizza',
       description: '',
+      category_name: 'savory',
       creator: 'tes',
       image:
         'https://res.cloudinary.com/dskltx6xi/image/upload/v1695158658/mama_recipe/recipe/cas8f06anzpfp6yarrrl.jpg',
